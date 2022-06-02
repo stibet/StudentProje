@@ -14,14 +14,15 @@ namespace ProjeObro.Controllers
     public class StudentController : ControllerBase
     {
         string result;
-
+        string[] lines = System.IO.File.ReadAllLines(@"C:\Users\suhey\OneDrive\Masaüstü\ProjeObro\db.txt");
+        string filePath = @"C:\Users\suhey\OneDrive\Masaüstü\ProjeObro\db.txt";
 
         [HttpGet]
         public List<Student> OgrenciGetir()
         {
             List<Student> studentList = new List<Student>();
 
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\suhey\OneDrive\Masaüstü\ProjeObro\db.txt");
+            //string[] lines = System.IO.File.ReadAllLines(@"C:\Users\suhey\OneDrive\Masaüstü\ProjeObro\db.txt");
             foreach (string line in lines)
             {
                 string[] hobiListe = line.Split(' ');
@@ -47,7 +48,7 @@ namespace ProjeObro.Controllers
         [HttpGet("{id}")]
         public List<Student> GetId(int id)
        {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\suhey\OneDrive\Masaüstü\ProjeObro\db.txt");
+            //string[] lines = System.IO.File.ReadAllLines(@"C:\Users\suhey\OneDrive\Masaüstü\ProjeObro\db.txt");
             List<Student> studentList = new List<Student>();
             if (lines.Length > 0) { 
             foreach (string s in lines)
@@ -66,9 +67,9 @@ namespace ProjeObro.Controllers
         [HttpPost]
         public void Post(Student model)
         {
-            //string[] lines = System.IO.File.ReadAllLines(@"C:\Users\suhey\OneDrive\Masaüstü\ProjeObro\db.txt");
-            string filePath = @"C:\Users\suhey\OneDrive\Masaüstü\ProjeObro\db.txt";
-            
+
+            //string filePath = @"C:\Users\suhey\OneDrive\Masaüstü\ProjeObro\db.txt";
+
 
             bool control =true;
             List<Student> dizi = OgrenciGetir();
@@ -110,7 +111,7 @@ namespace ProjeObro.Controllers
         public void Put(Student model)
         {
 
-            string filePath = @"C:\Users\suhey\OneDrive\Masaüstü\ProjeObro\db.txt";
+            //string filePath = @"C:\Users\suhey\OneDrive\Masaüstü\ProjeObro\db.txt";
 
 
             List<Student> dizi = OgrenciGetir();
@@ -146,7 +147,7 @@ namespace ProjeObro.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            string filePath = @"C:\Users\suhey\OneDrive\Masaüstü\ProjeObro\db.txt";
+            //string filePath = @"C:\Users\suhey\OneDrive\Masaüstü\ProjeObro\db.txt";
             string remove = "remove";
             List<Student> dizi = OgrenciGetir();
 
