@@ -1,0 +1,3 @@
+4 ali demir True
+2 mehmet kale True
+1 zeynep bulut True
